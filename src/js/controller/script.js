@@ -100,4 +100,10 @@ function fetchData(npm, tipe) {
   
   document.querySelector("#submit_btn").addEventListener("click", applyFilters);
   
+  function getCariMhswID() {
+    var mhswID = document.getElementById("inputCariMhswID").value;
   
+    sessionStorage.setItem("mhswID", mhswID);
+  
+    window.location.href = "addbim.html";
+  }

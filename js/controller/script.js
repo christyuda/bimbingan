@@ -89,6 +89,7 @@ function fetchData(npm, tipe) {
     console.log(data);
   }
   
+  
   function applyFilters() {
     const npmInput = document.querySelector("#npm_input");
     const tipeInput = document.querySelector("#tipe_input");
