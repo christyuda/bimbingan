@@ -25,10 +25,9 @@
   <!-- Favicon  -->
   <link rel="icon" href="src/img/favicon.png">
 
-  <style> .hide {
-    display: none;
+  <style> 
   
-  }</style>
+  </style>
 </head>
 <body class="font-sans text-base font-normal text-gray-600 dark:text-gray-400 dark:bg-gray-800">
   <!-- wrapper -->
@@ -237,7 +236,7 @@
           <li x-data="{ open: false }" class="relative">
             <a href="javascript:;" class="px-3 flex text-sm rounded-full focus:outline-none" id="user-menu-button" @click="open = ! open">
               <div class="relative">
-                <img class="h-10 w-10 rounded-full border border-gray-700 bg-gray-700" src="../src/img/avatar/avatar.png" alt="avatar">
+                <img class="h-10 w-10 rounded-full border border-gray-700 bg-gray-700" src="src/img/avatar/avatar.png" alt="avatar">
                 <span title="online" class="flex justify-center absolute -bottom-0.5 ltr:right-1 rtl:left-1 text-center bg-green-500 border border-white w-3 h-3 rounded-full"></span>
               </div>
               <span class="hidden md:block ltr:ml-1 rtl:mr-1 self-center">Ari Budin</span>
@@ -379,12 +378,12 @@
                             <td class="text-center"><span class="line-through mr-2"></span></td>
                             <td class="text-center hidden lg:table-cell"></td>
                             <td class="text-center">
-                              <a href="javascript:;" class="inline-block ltr:mr-2 rtl:ml-2 hover:text-red-500" title="Delete">
+                              <button ><a href="javascript:;" class="inline-block ltr:mr-2 rtl:ml-2 hover:text-red-500"  title="Delete">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
                                   <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
                                 </svg>
-                              </a>
+                              </a></button>
                               <a href="javascript:;" class="inline-block ltr:mr-2 rtl:ml-2 hover:text-green-500" title="Edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
@@ -393,7 +392,7 @@
                               </a>
                             </td>
                           </tr>
-                         
+
                         </tbody>
                       </table>
                     </div>
@@ -404,6 +403,40 @@
           </div>
         </div>
       </main>
+      
+      <div id="modal" class="fixed inset-0 z-10 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center">
+          <div class="fixed inset-0">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+          <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                    Selamat!
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm leading-5 text-gray-500" id="modal-message">
+                      Data berhasil dihapus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                <button id="modal-close" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  Tutup
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
 
       <footer class="bg-white dark:bg-gray-800 p-6 shadow-sm">
         <div class="mx-auto">
@@ -425,6 +458,8 @@
 
 
   <!--start::Global javascript (used in all pages)-->
+  <script src="vendors/sweetalert2/dist/sweetalert2.min.js"></script><!-- core js -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="vendors/alpinejs/dist/cdn.min.js"></script><!-- core js -->
   <script src="vendors/chart.js/dist/chart.min.js"></script><!-- charts -->
   <script src="vendors/flatpickr/dist/flatpickr.min.js"></script><!-- input date -->
